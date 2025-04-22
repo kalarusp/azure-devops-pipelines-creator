@@ -1,0 +1,44 @@
+{
+  "name": "azure-devops-pipelines-creator",
+  "displayName": "Azure DevOps Pielines Creator",
+  "description": "A VSCode extension to create Azure DevOps pipelines.",
+  "version": "1.0.0",
+  "publisher": "Piotr Kalarus",
+  "engines": {
+      "vscode": "^1.96.0"
+  },
+  "categories": [
+      "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [],
+  "contributes": {
+      "commands": [
+          {
+              "command": "extension.createAzureDevOpsPipelines",
+              "title": "Create Azure DevOps Pipelines"
+          }
+      ]
+  },
+  "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "pretest": "npm run compile && npm run lint",
+      "lint": "eslint src --ext ts",
+      "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+      "@types/node": "20.x",
+      "@types/vscode": "^1.96.0",
+      "@typescript-eslint/eslint-plugin": "^8.17.0",
+      "@typescript-eslint/parser": "^8.17.0",
+      "eslint": "^9.16.0",
+      "typescript": "^5.7.2",
+      "vscode-test": "^1.4.0"
+  },
+  "dependencies": {
+    "azure-devops-node-api": "^14.1.0",
+    "simple-git": "^3.27.0"
+  }
+}
